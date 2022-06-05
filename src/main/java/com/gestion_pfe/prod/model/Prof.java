@@ -51,9 +51,9 @@ public class Prof implements Serializable {
 	
 	
 	
+	private boolean chef;
 	
-	
-private Instant created;
+    private Instant created;
 	
     private boolean enabled;
 	

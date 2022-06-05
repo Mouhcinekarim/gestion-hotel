@@ -14,4 +14,5 @@ public class RegistrationRequest {
      private String email;
      private String password;
      private Integer departementId;
+     private boolean chef;
 	}
