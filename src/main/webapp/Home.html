@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style type="text/css">
+    #username{
+   position:absolute ;
+   right: 10%;
+   color: aliceblue;
+   
+   color: bisque;
+   width: 0px;
+   font-size:20px;
+   
+   font-family: Arial, Helvetica, sans-serif;
+}
+  .big :hover{
+    transform:scale(1.1);
+    transition:transform  .2s;
+    box-shadow: 0 0 11px black;
+
+  }
+  .logo{
+    font-family: 'Pacifico', cursive;
+    font-weight: normal;
+}
+.container{  
+text-align: center;  
+  
+width: 300px;  
+height: 200px;  
+padding-top: 400px;  
+}  
+#btn{  
+font-size: 25px;  
+} 
+
+  
+  </style>
+  
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <title>MyHotel</title>  
+  </head>
+<body>
+  <!-- navbar and inscription buttons -->
+  
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-6 ">
+   <div class="container-fluid">
+    <span class="navbar-brand mb-3 h3 display-1 "><center><h1>F4 </h1></center> Hotel & Resort</span>
+
+<div>
+    <a class="navbar-brand btn btn-outline-warning" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+     About Us
+    </a>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Historique F4</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div>
+          L'Hôtel F4 à Beni-Mellal fut édifié en 1970 par un groupe d'amis M.M.M.M, et inscrit à l’inventaire 
+          des Monuments Historiques en 2010. Ce bâtiment est un exemple remarquable d’architecture hôtelière 
+          de la période classique, construit à proximité de la porte de Ain Assrdoun, principale entrée dans 
+          la ville au XVIIIe siècle.
+          Histoire & Patrimoine a réhabilité 17 logements au cœur du centre historique. La façade principale
+           donnant sur le square du jardin Ain Assrdoun et ses jardins paysagers bénéficie d’un dégagement
+            profitable aux appartements, qui sont ainsi protégés des vis-à-vis et bénéficient d’une belle
+             luminosité entrant par les larges ouvertures.
+          Aménagement de 17 logements
+         Architecte : O.P.M.I
+        Réhabilité en 2021   </div>
+          </div> </div></div>
+
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+     aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+         
+             <li class="nav-item"> 
+              <a href="VoirNosServices.html" class="btn btn-warning btn-lg ">Voir Nos services</a> 
+              <!-- Bouton -->
+              <button class="btn btn-primary navbar-brand btn btn-outline-warning" style="height: 47px; width: 170px; background-color:black;" id="btnpanie"><a style="text-decoration:none; color:#FFFFFF;"  href="http://localhost:8080/GestionHotliere/reservation.html">>les reservations</a></button>
+<button class="btn btn-primary navbar-brand btn btn-outline-warning" style="height: 47px; width: 170px; background-color:black;" id="decon" href="Home.html">se deconnecter</button>
+              
+
+         </li>
+         </ul>
+      
+     
+
+        
+
+
+        </div>
+
+
+    </div>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+ 
+       <a class="btn btn-warning btnhom" href="Sinscrire.html" style=" margin: 1em auto;
+        text-align: center;  display: block; background-color: #ffcc00;
+       padding: 4px;"><h6>S'inscrire</h6></a>
+       <a class="btn btnhom" href="SeConnecter.html" style=" height:60px;width:80px; 
+       text-align: center;  display: block; margin: 1em auto; display: inline-block;
+       padding: 4px; background-color: #ffcc00;"><h6>Se connecter</h6></a>
+
+</div>
+<div id="username"></div>
+  </nav> 
+   <!-- NomHotel/Services -->
+
+
+    <section id="content">
+      <div class="bg-image"   style="background-image: url('Pics/pool.webp');
+  background-repeat: no-repeat; height:100vh; background-size:cover;">
+      <center>
+       <div class="container lg  " >
+         <div class="row justify-content-center">
+          <div class="col-md-5 text-center  text-md-center"> 
+            <h1>
+              <span class="glyphicon glyphicon-search" style="color:hsl(44, 71%, 48%);">
+              <i class="bi bi-star-fill"  color: #ffd700;></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </span>
+          </br> <br>
+
+          <a href="ReserverForm.html">
+            <button style="width: 70%; height: 100px; color:white; background-color:#1a1718" id="btnreserver"><H2>Reserver</H2></button>
+            </a> 
+           </h1>
+             <!-- TODO FOOD (MAROCAIN MODERNE) GYM  MENAGE   -->
+        </div>
+       </div>
+    </section>
+  </div></center>
+    <!-- second nav-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3 ">
+      <div class="container-fluid">
+       <span class="navbar-brand mb-3 h1 display-1 "><center><h1>Fantastic4 Hotel </h1></center><br/> F4 for everyone</span>
+   <h3 class="text-muted">Your second home</h3>
+       
+       </div>
+      
+     </nav>
+    <!-- Cards-->
+     </section>
+        <section id="#reserver" class="bg-light mt-5">
+          <div class="container-lg">
+            <div class="text-center">
+              <h2>Tarifs des Chambres</h2>
+              <p class="lead text-muted"> Choisissez votre chambre </p>
+            </div>
+            <div class="row my-5 align-items-center justify-content-center "> 
+              <div class="col-9 col-lg-4">
+                <div class="card bordered-0">
+                  <div class="big">
+                  <img src="Pics/download.jpg" class="card-img-top" alt="..."> </div>
+                <div class="card-body text-center py-4">
+                 <h4 class="card-title"> Chambre Simple</h4>
+                 <p class=" lead card-subtitle">promotion 15%</p>
+                 <p class="display-5 my-1 text-danger fw-bold">$99,99</p>
+                 <p class="card-text mx-5 text-muted d-none d-lg-block">Moderne, d'une superficie de 26 m2 environ, située
+                    au 2eme étage, lit en 180 cm, mini bar, plateau d'accueil, coffre fort, canapé convertible en 160 cm,
+                     TV 107 cm</p>
+                </div>
+                </div> 
+              </div> 
+                  <div class="col-9 col-lg-4">
+                    <div class="card border-primary bordered-2">
+                      <div class="big">
+                      <img src="Pics/multipple2.jpg" class="card-img-top" alt="..."> </div>
+                      <div class="card-header text-center text-danger">La plus demandée</div>
+                    <div class="card-body text-center py-4">
+                     <h4 class="card-title"> Chambre Multiple</h4>
+                     <p class=" lead card-subtitle">promotion 30%</p>
+                     <p class="display-5 my-4 text-danger fw-bold">$149,99</p>
+                     <p class="card-text mx-5 text-muted d-none d-lg-block">chambre à lits jumeaux (Twin):
+                        deux lits côte à côte de 90 x 190 (dont une pour personne à mobilité réduite).
+                        </p>
+                    </div>
+                    </div>
+                  </div>
+                  <div class="col-9 col-lg-4">
+                    <div class="card bordered-0">
+                      <div class="big">
+                      <img src="Pics/family.jpg" class="card-img-top" alt="..."> </div>
+                    <div class="card-body text-center py-4">
+                     <h4 class="card-title"> Chambre Familiale</h4>
+                     <p class=" lead card-subtitle">promotion 20%</p>
+                     <p class="display-5 my-4 text-danger fw-bold">$199,99</p>
+                     <p class="card-text mx-5 text-muted d-none d-lg-block">La chambre familiale est composée d’un bureau,
+                        d’une armoire, d’un lit 140 ou 160 et de 2 lits 90,
+                        d’une salle de bain double vasque avec douche ou baignoire et WC.
+                        </p>
+                    </div>
+                    </div>
+                  </div>
+            </div>
+          </div>
+        </section> <!-- EndCards -->
+        <!--Hotel Reviews  -->
+  <section id="reviews" class="bg-light">
+    <div class="container-lg">
+      <div class="text-center">
+        <h2>Hotel Reviews</h2>
+        <p class="lead">Ce que nos visiteurs ont dit à propos de l’hôtel! </p>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="list-group">
+            <div class="list-group-item py-3">
+              <h5>Je le recommande vivement</h5>
+              <p>Personnel aux petits soins, décoration alliant modernité et style traditionnel,
+                 petit déjeuner varié et très bon tout comme les plats servis le soir
+                  (penser à prévenir dans la journée)</p>
+             <small>Review par Ali</small>
+            </div>
+
+            <div class="list-group-item py-3">
+              <h5>J'ai Apprécié Y Séjourner</h5>
+              <p>Chambre confortable petit déjeuner copieux et très correct pour le prix personnel
+                 accueillant surtout la dame à l'accueil)</p>
+             <small>Review par Salma</small>
+            </div>
+
+            <div class="list-group-item py-3">
+              <h5>Si joli</h5>
+              <p>Architecture intérieure, nombreuses terrasses Accueil très agréable</p>
+             <small>Review par Mathieu</small>
+            </div>
+
+            <div class="list-group-item py-3">
+              <h5>c’était bien</h5>
+              <p>L’Emplacement - les repas (meme si pas trop diversifiés) - le personnel et les animateurs -
+                 la piscine chauffée - le mini bar gratuit
+                Le restaurant principal et les chambres sont un peu sombres - la literie moyenne -
+                 Les animations le soir se terminent beaucoup trop tôt 23h ! C’est dommage)</p>
+             <small>Review par Sami</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</br>
+        
+       
+<!-- Footer -->
+<footer class="bg-dark text-center text-white">
+  <!-- Grid container -->
+  <div class="container-fluid p-4">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+      <i class="bi bi-facebook"></i>      </a>
+
+      <!-- Twitter -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+      <i class="bi bi-twitter"></i>      </a>
+
+      <!-- Google -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+      <i class="bi bi-google"></i>      </a>
+
+      <!-- Instagram -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+      <i class="bi bi-instagram"></i>      </a>
+
+      <!-- Linkedin -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+      <i class="bi bi-linkedin"></i>      </a>
+
+      <!-- Github -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+      <i class="bi bi-github"></i>      </a>
+    </section>
+    <!-- Section: Social media -->     
+    <section class="mb-4">
+      <p>
+        © Reservation website O.M.I.M - I-AV-0011886.1· NIF E35289· 0 519 12 66 53
+Déclaration de confidentialité Termes et conditions Politique de cookies
+      </p>
+    </section>
+    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+      <!-- Links -->
+      <h6 class="text-uppercase fw-bold mb-4">
+        Contact
+      </h6>
+    
+      <p><i class="bi bi-house-door-fill"></i> Beni-Mellal, BM 23000, MAROC</p>
+      <p>
+        <i class="bi bi-envelope"></i> cantactsupport@gmail.com
+      </p>
+      <p><i class="bi bi-telephone-fill"></i>+ 212 234 567 88</p>
+      <p><i class="bi bi-printer-fill"></i></i> + 555 234 567 89</p> 
+
+    
+    </div>
+    <!-- Grid column -->
+ </div>
+  <!-- Grid row -->
+</div>
+</section>
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2020 Copyright:
+    <a class="text-white" href="">Fantastic4.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+<script type="text/javascript">
+  var username=document.getElementById("username");
+  var btns= document.getElementsByClassName("btnhom");
+  var btnp=document.getElementById("btnpanie");
+  var btnr=document.getElementById("btnreserver");
+  var decon=document.getElementById("decon");
+  
+ 
+
+  
+  if(getCookie("username")!="") {
+    
+    username.innerText="WELCOME :"+getCookie("username");
+    
+    for (var i = 0 ; i <btns.length ; i++) {
+       
+      btns[i].style.display ="none";             
+      }
+    username.style="width: "+(username.innerText.length*25)+"px;";
+  }
+  else{
+    username.innerText=" ";
+    
+    btnp.style.display ="none";
+    btnr.style.display ="none";
+    decon.style.display ="none";
+  }
+  
+     function getCookie(cname) {
+      let name = cname + "=";
+      let decodedCookie = decodeURIComponent(document.cookie);
+      let ca = decodedCookie.split(';');
+      for(let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
+    }
+     decon.addEventListener("click",function(e){
+         e.preventDefault();
+   	  document.cookie="username= ;max-age=0"
+   		//window.location.reload();
+   	  });
+  </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+ integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
+ crossorigin="anonymous"></script>
+</body>
+</html>

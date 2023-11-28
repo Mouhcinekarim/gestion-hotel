@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+<style type="text/css">
+  .logo{
+    font-family: 'Pacifico', cursive;
+    font-weight: normal;
+  }
+  h1{
+    min-height: 10vh;
+    text-align: left;
+    margin :auto;
+    display:block;
+    font-size: xx-large;
+    background-color: #e6bc00;
+    padding-top: 1.5rem;
+    padding-bottom: 1.2rem;
+    border-style: none;
+    padding: 2rem; 
+  }
+</style>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <title>Inscription</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+
+</head>
+<body>
+    <header>
+        <h1  class="logo"> Fantastic4 Hotel  </h1>
+    </header>
+           <!-- Form --> 
+<div class="container-lg">
+  <div class="text-center">
+    <h2>Créer un compte</h2>
+    <p> <h6>Chez F4 c'est chez vous !</h6> </p>
+  </div>
+    <div class="row justify-content-center my-5">
+     <div class="col-lg-6">
+       <form method="POST" action="SeConnecter.html" id="formul" >
+         <label for="nom" class="form-label">User Name:</label>    
+         <div class="mb-4 input-group">
+           <span class="input-group-text">
+            <i class="bi bi-file-person-fill"></i>
+           </span>
+         <input type="text" class="form-control" id="nom" name="nom" required /> 
+        </div>
+         <label for="Email" class="form-label">Email</label>
+         <div class="mb-4 input-group">
+          <span class="input-group-text">
+            <i class="bi bi-at"></i>           </span>
+          <input type="email" class="form-control" id="Email"placeholder="exemple@gmail.com" name="email" required />
+       </div>
+        <!--  <label for="Tel" class="form-label">Tél:</label>
+         <div class="mb-4 input-group">
+          <span class="input-group-text">
+            <i class="bi bi-telephone-fill"></i>           </span>
+           <input type="tel" class="form-control" id="Tel" name="tel" required /><br />
+          </div> -->
+         <label for="pswrd" class="form-label">Mot de passe:</label>
+         <input type="password" class="form-control" id="pswrd"  name="password" required/><br />
+         <input type="submit" class="btn btn-warning btn-lg" id="buton" value="S'inscrire" href="SeConnecter.html"/>
+      </form>
+     </div>
+    </div>
+</div>
+    
+   
+<!-- FormEnd -->
+
+<script>
+  
+  var mail=document.getElementById("Email");
+  var nom=document.getElementById("nom");
+  var t=document.getElementById("Tel");
+  var p=document.getElementById("pswrd");
+  var email=false,tel=false,pwd=false,nam=false;
+  button()
+  nom.focus();
+  nom.addEventListener("input",function(e){
+       if(!e.target.value.match(/\w{8,}$/)){
+        nam=false;
+        e.target.style="box-shadow: 0px 5px 0px red; background-color:#FFD7C9;";
+       }
+       else{
+        nam=true;
+        e.target.style="box-shadow: 0px 5px 0px green; background-color:E0FFC9;";
+       }
+       button();
+  });
+  var regmail=/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  mail.addEventListener("input",function(e){
+    if(!e.target.value.match(regmail)){
+      email=false;
+        e.target.style="box-shadow: 0px 5px 0px red; background-color:#FFD7C9;";
+       }
+       else{
+        email=true;
+        e.target.style="box-shadow: 0px 5px 0px green; background-color:E0FFC9;";
+       }
+       button();
+      });
+ /*  t.addEventListener("input",function(e){
+    if(!e.target.value.match(/^(06|05)[0-9]{8}$/)){
+      tel=false
+        e.target.style="box-shadow: 0px 5px 0px red; background-color:#FFD7C9;";
+       }
+       else{
+        tel=true;
+        e.target.style="box-shadow: 0px 5px 0px green; background-color:E0FFC9;";
+       }
+       button();
+      }); */
+  p.addEventListener("input",function(e){
+    if(!e.target.value.match(/\w{8,32}/)){
+      pwd=false;
+        e.target.style="box-shadow: 0px 5px 0px red; background-color:#FFD7C9;";
+       }
+       else{
+        pwd=true;
+        e.target.style="box-shadow: 0px 5px 0px green; background-color:E0FFC9;";
+       }
+       button();
+      });
+      function button(){
+      if(pwd&&email&&nam){
+        
+        document.getElementById("buton").disabled = false;
+      }
+      else{
+        
+      document.getElementById("buton").disabled = true;
+      }};
+    document.getElementById("formul").addEventListener("submit",function(e){
+      //  e.preventDefault() ;
+       document.cookie="";
+         document.cookie="username="+nom.value+";max-age=200";
+        // document.cookie="tel="+t.value+";max-age=200";
+         document.cookie="password="+p.value+";max-age=200";
+         document.cookie="Email="+mail.value+";max-age=200";
+         var ladate=new Date();
+         t=ladate.getFullYear()+"-"+(ladate.getMonth()+1)+"-"+ladate.getDate();
+         consol.log(document.cookie);
+       
+        envoi();
+      //  e.preventDefault();
+        //document.cookie="username="+nom.value+"";  
+    //    document.cookie="username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";        consol.log(document.cookie);
+               });
+function envoi(){
+	  consol.log(t);
+var obj={
+  Email:mail.value,
+  UserName:nom.value,
+  DateSignUp:t.value,
+  Password:p.value
+}
+//consol.log(JSON.stringify(obj))
+sendobj(obj);
+
+}
+function sendobj(obj){
+	var hr= new XMLHttpRequest();
+	var lien="http://localhost:8080/GestionHotliere/Inscription";
+	hr.onreadystatechange=writeContent;
+	hr.open("POST",lien);
+	hr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	hr.send("json="+JSON.stringify(obj));
+	function writeContent(){
+		if(hr.readyState==4){
+	           if(hr.status==200){
+	               consol.log(hr.responseText);
+	         
+	           
+	               }
+	           else{
+	        	   consol.log(hr.responseText);
+	        	   console.log("errr1");
+	               }
+			}
+		else{
+			consol.log(hr.status);
+	console.log(hr.status);
+			}
+			}
+		  
+}
+</script>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
+crossorigin="anonymous"></script>
+</html>

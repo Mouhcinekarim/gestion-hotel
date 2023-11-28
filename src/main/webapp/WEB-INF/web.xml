@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<element>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>GestionHotliere</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+  <jsp-config>
+    <jsp-property-group>
+      <url-pattern>*.jsp</url-pattern>
+      <include-prelude>/WEB-INF/expression.jsp</include-prelude>
+    </jsp-property-group>
+  </jsp-config>
+  <!-- Inscription -->
+  <servlet>
+  <servlet-name>Inscription</servlet-name>
+  <servlet-class>servlets.forms.Inscription</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>Inscription</servlet-name>
+  <url-pattern>/Inscription</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Bienvenue -->
+  <servlet>
+  <servlet-name>Bienvenue</servlet-name>
+  <servlet-class>servlets.forms.Bienvenue</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>Bienvenue</servlet-name>
+  <url-pattern>/Bienvenue</url-pattern>
+  </servlet-mapping>
+  
+   <!-- Customer -->
+  <servlet>
+  <servlet-name>CustomerInfo</servlet-name>
+  <servlet-class>servlets.forms.CustomerInfo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>CustomerInfo</servlet-name>
+  <url-pattern>/CustomerInfo</url-pattern>
+  </servlet-mapping>
+  <!-- roomsInfo -->
+  <servlet>
+  <servlet-name>roomsInfo</servlet-name>
+  <servlet-class>servlets.forms.roomsInfo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>roomsInfo</servlet-name>
+  <url-pattern>/roomsInfo</url-pattern>
+  </servlet-mapping>
+</web-app>
+</element>

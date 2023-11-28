@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+<title>JustTable</title>
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+
+</script>
+</head>
+<body> 
+<!-- <nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
+       
+        <div class="collapse navbar-collapse" id="navLinks">
+            <ul class="navbar-nav">
+                <li class="nav-item"> <a href="Home.html" class="nav-link navbar-light btn btn-outline-info"><h5 style="color:black "><u><B>HOME</B></u></h5></a> </li>
+      
+        </div>
+    </nav> -->
+  <div class="container" style="width: 1098px;z-index :100;">
+  <div style="display: flex">
+<div class="input-group">
+    <span class="input-group-text">Date arrivée</span>
+    <input type="date" class="form-control" 
+        placeholder="Type something..." id="date_ariv"  required />
+    <span class="input-group-text" 
+        style="border-left: 0; border-right: 0;">
+       Date départ
+    </span>
+    <input type="date" class="form-control"     
+        placeholder="Type something..." id="datedep" required />
+</div>
+<button id="chercher" class="btn btn-primary navbar-brand btn btn-outline-warning" style="height: 47px; width: 170px; background-color:black;" id="chercher">chercher</button>
+</div>
+        <div class="table-responsive">
+            <table class="table" id="myTable">
+                <thead>
+                    <tr>
+                        <th style="text-align: center;">Id</th>
+                        <th style="text-align: center;">Date départ</th>
+                        <th style="text-align: center;">Date Fin</th>
+                        <th style="text-align: center;">Editer</th>
+                        <th style="text-align: center;">Supprimer</th>
+                    </tr>
+                </thead>
+                 <tbody id="tableData"></tbody>
+            </table>
+        </div>
+    </div>
+
+
+<script>
+var btncherch=document.getElementById("chercher");
+var date_ariv=document.getElementById("date_ariv");
+var datedep=document.getElementById("datedep");
+
+var ccin=getCookie("cin");
+
+console.log(getCookie("cin"));
+var hr= new XMLHttpRequest();
+var lien="http://localhost:8080/GestionHotliere/SearchReservation?cin="+ccin;
+hr.onreadystatechange=writeContent;
+hr.open("GET",lien);
+//hr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+// console.log("cus="+JSON.stringify(obj2)+"&res="+JSON.stringify(obj1)+""+obj3);
+//console.log(JSON.stringify(obj1));
+//console.log(ccin);
+hr.send();
+function writeContent(){
+	if(hr.readyState==4){
+           if(hr.status==200){
+	           //console.log.log(hr.responseText);
+	           
+	           
+	           console.log("da5l");
+	          // console(hr.responseText);
+            table_objet(JSON.parse(hr.responseText));
+            list=JSON.parse(hr.responseText);
+              
+           
+               }
+           else{
+        	   console.log(hr.responseText);
+        	   console.log(" 2 errr1");
+               }
+		}
+	else{
+		//console.log(hr.status);
+console.log("elss"+hr.status);
+		}
+		}
+
+console.log(ccin+"c");
+console.log(ccin);
+	function getCookie(cname) {
+	  let name = cname + "=";
+	  let decodedCookie = decodeURIComponent(document.cookie);
+	  let ca = decodedCookie.split(';');
+	  for(let i = 0; i < ca.length; i++) {
+	    let c = ca[i];
+	    while (c.charAt(0) == ' ') {
+	      c = c.substring(1);
+	    }
+	    if (c.indexOf(name) == 0) {
+	      return c.substring(name.length, c.length);
+	    }
+	  }
+	  return "";
+	}
+	//document.onload=sendobj(ccin);
+	//window.addEventListener("load",sendobj(ccin))
+	setTimeout(function sendobj(){
+		//console.log("cin"+obj1);
+				  
+	},0);
+//id.addEventListener("click",sendobj(id));
+var list= new Object();
+btncherch.addEventListener("click",myFunction);
+function myFunction() {
+	console.log("1");
+	  var   table, tr, td, i;
+	  input = document.getElementById("myInput");
+	       date1=Date.parse(date_ariv.value);
+	         date2=Date.parse(datedep.value);
+	  
+	 
+	  table = document.getElementById("myTable");
+	  tr = table.getElementsByTagName("tr");
+	  for (i = 0; i < tr.length; i++) {
+	    console.log(i);
+	   var td1 = tr[i].getElementsByTagName("td")[1];
+	   var td2 = tr[i].getElementsByTagName("td")[2];
+
+	    if (td1&&td2) {
+	console.log(td1.textContent);
+	console.log(td2.textContent)
+	      tx1 = Date.parse(td1.textContent);
+	      tx2=Date.parse(td2.textContent);
+	   console.log(td1.textContent+"  "+date_ariv.value);
+	   console.log(td2.textContent+"  "+datedep.value);
+	      if ((tx1>date1)&&(tx2<date2)) {
+	      
+	      console.log("karim")
+	        tr[i].style.display ="";
+	      } else {
+	        tr[i].style.display ="none";
+	      }
+	    }       
+	  }
+
+	}
+
+/* function sendobj(obj1){
+	console.log("load");
+	console("2");
+	var hr= new XMLHttpRequest();
+	var lien="http://localhost:8080/GestionHotliere/SearchReservation";
+	hr.onreadystatechange=writeContent;
+	hr.open("POST",lien);
+	hr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+ // console.log("cus="+JSON.stringify(obj2)+"&res="+JSON.stringify(obj1)+""+obj3);
+ //console.log(JSON.stringify(obj1));
+	hr.send("cin="+cin.value);
+	function writeContent(){
+		if(hr.readyState==4){
+	           if(hr.status==200){
+	        	  // console.log(hr.status);
+	        	  console.log("karim");
+	        	  console.log(JSON.parse(hr.responseText));
+                table_objet(JSON.parse(hr.responseText));
+                list=JSON.parse(hr.responseText);
+               // table_objet(list);
+	               console.log(hr.responseText);
+	               //console.log("tout pass bient 2");
+	           
+	               }
+	           else{
+	        	  console.log(hr.responseText);
+	        	   console.log(" 2 errr1");
+	               }
+			}
+		else{
+			//console.log(hr.status);
+	console.log("else"+hr.status);
+			}
+			}
+		  
+}
+ */
+
+function table_objet(mainObj){
+             //  console.log(mainObj);
+ var k = '<tbody>'
+  //  console.log(mainObj.length);
+        for(i = 0;i < mainObj.length; i++){
+           // console.log(mainObj);
+            k+= '<tr>';
+            k+= '<td>' + mainObj[i].IdReservation + '</td>';
+            k+= '<td>' + mainObj[i].DateStart + '</td>';
+            k+= '<td>' + mainObj[i].DateEnd + '</td>';
+            
+           k+= '<td  style="text-align: center;"><a id="'+(mainObj[i].IdReservation+1)+'" class="btn btn-primary btnmot" href="http://localhost:8080/GestionHotliere/modifier.jsp?cin='+mainObj[i].IdReservation+'"  role="button" style="color: var(--bs-white);background: var(--bs-green);font-size: 5px;"><i class="fa fa-pencil-square-o" style="font-size: 25px;"></i></a></td>'
+            k+='<td   style="text-align: center;"><a id="'+(mainObj[i].IdReservation+2)+'" class="btn btn-primary btsup" href="http://localhost:8080/GestionHotliere/reservation.html"  role="button" style="color: var(--bs-white);background: var(--bs-danger);font-size: 8px;"><i class="fa fa-trash" style="font-size: 25px;"></i></a><input type="hidden" ></td>'
+                           
+            k+= '</tr>';
+        }
+        k+='</tbody>';
+        document.getElementById('tableData').innerHTML = k
+
+        var items = document.getElementsByClassName('btnmot');
+var items = document.getElementsByClassName('btsup');
+        
+        for (var i = 0; i < items.length; i++) {
+          items[i].addEventListener('click', printDetails);
+        }
+        for (var i = 0; i < items.length; i++) {
+          items[i].addEventListener('click', printDetails);
+        }
+
+        function printDetails(e) {
+        	supp((this.id-2));
+        }
+         }
+      
+///////////supprimer
+
+
+
+      
+
+        function sendobj(obj1){
+	console.log("cin"+obj1);
+	console.log("1");
+	var hr= new XMLHttpRequest();
+	var lien="http://localhost:8080/GestionHotliere/SearchReservation";
+	hr.onreadystatechange=writeContent;
+	hr.open("POST",lien);
+	hr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+ // console.log("cus="+JSON.stringify(obj2)+"&res="+JSON.stringify(obj1)+""+obj3);
+ //console.log(JSON.stringify(obj1));
+    console.log(obj1);
+	hr.send("cin="+obj1);
+	function writeContent(){
+		if(hr.readyState==4){
+	           if(hr.status==200){
+		           //console.log.log(hr.responseText);
+		           
+		           
+		           console.log("da5l");
+		           console.log(hr.responseText);
+                table_objet(JSON.parse(hr.responseText));
+                list=JSON.parse(hr.responseText);
+	              
+	           
+	               }
+	           else{
+	        	   //console.log(hr.responseText);
+	        	   console.log(" 2 errr1");
+	               }
+			}
+		else{
+			//console.log(hr.status);
+	console.log("elss"+hr.status);
+			}
+			}
+		  
+}
+        function supp(obj1){
+               
+        	//console.log("cin"+obj1);
+        	var hr= new XMLHttpRequest();
+        	var lien="http://localhost:8080/GestionHotliere/SupprimerCustomer";
+        	hr.onreadystatechange=writeContent;
+        	hr.open("POST",lien);
+        	hr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+         // console.log("cus="+JSON.stringify(obj2)+"&res="+JSON.stringify(obj1)+""+obj3);
+         //console.log(JSON.stringify(obj1));
+        	hr.send("id="+obj1);
+        	function writeContent(){
+        		if(hr.readyState==4){
+        	           if(hr.status==200){
+                       
+        	               //console.log(hr.responseText);
+        	               //console.log("tout pass bient 2");
+        	               console.log(JSON.stringify(list));
+        	        	  for(var j=0;j<list.length-1;j++){
+        	        		  console.log(JSON.stringify(list)+"        "+obj1);
+        	        		  console.log(" id"+list[i].IdReservation);
+     			          if(list[i].IdReservation==obj1){
+         			         
+        		           for(var i=0;i<list.length;i++){
+        		        	   list[i]=list[i+1];
+                                   if(i==list.length-1) list[i]=null;
+        			           }
+        		           console.log(JSON.stringify(list))
+    			           break;
+     			          }
+        		           }
+        	        	 // table_objet(list);
+        	               }
+        	           else{
+        	        	   //console.log(hr.responseText);
+        	        	  
+        	        	   console.log(" 2 errr1");
+        	               }
+        			}
+        		else{
+        			//console.log(hr.status);
+        	console.log(hr.status);
+        			}
+        			}
+        		  
+        }     
+</script>
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+<style type="text/css">
+  .logo{
+    font-family: 'Pacifico', cursive;
+    font-weight: normal;
+  
+  }
+  h1{
+    min-height: 10vh;
+    text-align: left;
+    margin :auto;
+    display:block;
+    font-size: xx-large;
+    background-color: #e6bc00;
+    padding-top: 1.5rem;
+    padding-bottom: 1.2rem;
+    border-style: none;
+    padding: 2rem; 
+  }
+ 
+
+
+</style>
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <title>Inscription</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+
+</head>
+<body>
+    <header>
+        <h1  class="logo"> Fantastic4 Hotel  </h1>
+    </header>
+
+
+  <div class="container-lg">
+    <div class="text-left">
+      <h2 class="display-1" style="font-family: Lucida Handwriting;">Réservation </br> en ligne</h2>
+      <p> <h4 class="text-muted">Enregistrez les informations de votre</br> réservation pour éviter les files 
+        d’attente à</br> votre arrivée à l’hôtel !</h4> </p>
+    </div>
+    
+      <div class="row justify-content-left my-5">
+       
+       <div class="col-lg-6">
+         
+         <form method="POST" action="reservation.html" id="reserve" >
+           <label for="cin" class="form-label">CIN :</label>    
+           <div class="mb-4 input-group">
+             <span class="input-group-text">
+              <i class="bi bi-file-person-fill"></i>
+             </span>
+           <input type="text" class="form-control" id="cin" name="Cin" required /> 
+          </div>
+   
+              <label for="Tel" class="form-label">Tél:</label>
+         <div class="mb-4 input-group">
+          <span class="input-group-text">
+            <i class="bi bi-telephone-fill"></i>           </span>
+           <input type="tel" class="form-control" id="Tel" name="tel" required /><br />
+          </div> 
+          <label for="cin" class="form-label">Le relevé d'identité bancaire (RIB):</label>    
+          <div class="mb-4 input-group">
+            <span class="input-group-text">
+             <i class="bi bi-file-person-fill"></i>
+            </span>
+          <input type="text" class="form-control" id="rip" name="rip" required /> 
+         </div>
+            <div class="input-group">
+              <span class="input-group-text">Date arrivée</span>
+              <input type="date" class="form-control" 
+                  placeholder="Type something..." id="date_ariv"  required />
+              <span class="input-group-text" 
+                  style="border-left: 0; border-right: 0;">
+                 Date Départ
+              </span>
+              <input type="date" class="form-control"     
+                  placeholder="Type something..." id="datedep" required />
+          </div>
+        </br>
+          <label for="nb" class="form-label"><h6>Pour combien de personnes voulez-vous faire le check-in ?</h6>
+            <p class="text-muted">(N’est pas nécessaire pour les bébés)</p></label>
+           <div class="mb-4 input-group">
+            <input type="text" id="nb" class="form-control" name="nb" required/>
+         </div>
+  
+         <label for="tc" class="form-label"><h6>Type de chambre:</h6></label>
+            <div class="form-check form-check-block">
+              <input class="form-check-input" type="checkbox" name="ChambreType" id="tc1" data-toggle='collapse' data-target='#collapsediv1'>
+              <label class="form-check-label" for="tc1">
+              Chambre simple
+              </label>
+              <div  id='collapsediv1' class='collapse show div1'>
+              <input type="number" id="nbr_sumple" value="0">
+              </div>
+            </div>
+            <div class="form-check form-check-block">
+              <input class="form-check-input" type="checkbox" name="tc2" id="tc2" >
+              <label class="form-check-label" for="tc2">
+               Chambre multiple
+              </label>
+              <div  id='collapsediv1' class='collapse show div1'>
+              <input type="number" id="nbr_multipl" value="0">
+              </div>
+            </div>
+            <div class="form-check form-check-block">
+              <input class="form-check-input" type="checkbox" name="tc3" id="tc3" >
+              <label class="form-check-label" for="tc3">
+               Chambre familiale
+              </label>
+              <div  id='collapsediv1' class='collapse show div1'>
+              <input type="number" id="nbr_famulial" value="0">
+              </div>
+            </div>
+  
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="sr">
+              <label class="form-check-label" for="sr">Service de restauration</label>
+            </div>
+  
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="as">
+              <label class="form-check-label" for="as">Autres services <p class="text-muted">(Salle de fitness, spa, service d’étage, wifi, parking privé)</p></label>
+            </div>
+  </br>
+           <input type="submit" class="btn btn-warning btn-lg" value="Valider"/>
+        </form>
+    
+       </div>  
+      </div>
+  </div>
+
+           <!-- Form --> 
+
+    
+   
+<!-- FormEnd -->
+<script type="text/javascript">
+//les variable
+var cin=document.getElementById("cin");
+var tel=document.getElementById("Tel");
+var rip=document.getElementById("rip");
+var datrev=document.getElementById("date_ariv");
+var datedep=document.getElementById("datedep");
+var nb=document.getElementById("nb");
+var tc1=document.getElementById("tc1");
+var tc2=document.getElementById("tc2");
+var nbr_sumple=document.getElementById("nbr_sumple");
+var nbr_multipl=document.getElementById("nbr_multipl");
+var tc3=document.getElementById("tc3");
+var nbr_famulial=document.getElementById("nbr_famulial");
+var sr=document.getElementById("sr");
+var as=document.getElementById("as");
+var txt=cin.value+" "+datrev.value+" "+datedep.value+nb.value+tc1.value+tc2.value+nbr_sumple.value+nbr_multipl.value+tc3.value+nbr_famulial.value+sr.value+as.value+"";
+function chambre_disponble(){
+   
+
+}
+function chambres(){
+
+var chmbr="";
+if(tc1.checked){
+ 
+     chmbr+="&simple="+nbr_sumple.value;
+    
+   }
+if(tc2.checked){
+ 
+  chmbr+="&double="+nbr_multipl.value;
+  
+  }
+   if(tc3.checked){
+   
+    chmbr+="&groupe="+nbr_famulial.value;
+ 
+   
+   return chmbr;
+} }
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+ document.getElementById("reserve").addEventListener("submit",function (e){
+   e.preventDefault();
+   var v1=44332323;
+   var v2=1234567890;
+  
+   var cus={
+    Phone:tel.value,
+    Cin:cin.value,
+    CardNumber:rip.value,
+   
+
+   }
+   console.log(JSON.stringify(cus));
+  // chambres:chambres()
+  var chem=chambres();
+  
+var res={
+  cin:cin.value,
+  TotalRooms:(nbr_sumple.value+nbr_multipl.value+nbr_famulial.value),
+  DateReservation:datrev.value,
+  NumberOfMembers:nb.value,
+  DateStart:datrev.value,
+    DateEnd:datedep.value,
+  prixtotal:(nbr_sumple.value*20+nbr_multipl.value*45+nbr_famulial.value*70)
+  
+};
+
+sendobj1(res,cus,chem);
+
+function sendobj1(obj1,obj2,obj3){
+	console.log("send");
+	var hr= new XMLHttpRequest();
+	var lien="http://localhost:8080/GestionHotliere/CustomerInfo";
+	hr.onreadystatechange=writeContent;
+	hr.open("POST",lien);
+	console.log(JSON.stringify(obj1));
+	hr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  console.log("cus="+JSON.stringify(obj2)+"&res="+JSON.stringify(obj1)+""+obj3);
+ //console.log(JSON.stringify(obj1));
+	hr.send("cus="+JSON.stringify(obj2)+"&res="+JSON.stringify(obj1)+""+obj3);
+	document.cookie="cin="+cin.value+";max-age=1000";
+	function writeContent(){
+		if(hr.readyState==4){
+	           if(hr.status==200){
+	               console.log(hr.responseText);
+	               
+	              console.log("tout pass bien");
+	              document.cookie="cin="+cin.value+";max-age=1000";
+	              console.log(document.cookie);
+	              window.location.assign("http://localhost:8080/GestionHotliere/reservation.html");
+	              console.log(hr.status);
+	              
+	               }
+	           else{
+	        	   console.log(hr.responseText);
+	        	   console.log(" errr1");
+	               }
+			}
+		else{
+			console.log(hr.status);
+			console.log(hr.status);
+			console.log("1 err2");
+	console.log(hr.status);
+			}
+			}
+		  
+}
+///console.log(JSON.stringify(res));
+//console.log("apres send cin")
+
+//setTimeout(sendobj(cin.value),100);
+/* function sendobj(obj1){
+	//console.log("cin"+obj1);
+	var hr= new XMLHttpRequest();
+	var lien="http://localhost:8080/GestionHotliere/SearchReservation";
+	hr.onreadystatechange=writeContent;
+	hr.open("POST",lien);
+	hr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+ // console.log("cus="+JSON.stringify(obj2)+"&res="+JSON.stringify(obj1)+""+obj3);
+ //console.log(JSON.stringify(obj1));
+	hr.send("cin="+cin.value);
+	function writeContent(){
+		if(hr.readyState==4){
+	           if(hr.status==200){
+	               //console.log(hr.responseText);
+	               //console.log("tout pass bient 2");
+	           
+	               }
+	           else{
+	        	   //console.log(hr.responseText);
+	        	   console.log(" 2 errr1");
+	               }
+			}
+		else{
+			//console.log(hr.status);
+	console.log(hr.status);
+			}
+			}
+		  
+} */
+});
+
+
+</script>
+
+<?php $IPATH = $_SERVER["DOCUMENT_ROOT"]."/assets/php/"; include($IPATH."footer.html"))?>
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
+crossorigin="anonymous"></script>
+</html>
